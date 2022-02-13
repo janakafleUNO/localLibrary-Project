@@ -8,6 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required, permission_required
 
 
+
 @login_required
 def index(request):
     """View function for home page of site."""
@@ -72,3 +73,10 @@ class AuthorDetailView(LoginRequiredMixin, generic.DetailView):
     def author_detail_view(request, primary_key):
         author = get_object_or_404(Author, pk=primary_key)
         return render(request, 'catalog/author_detail.html', context={'author': author})
+
+
+
+
+
+
+
